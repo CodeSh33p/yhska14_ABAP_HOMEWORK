@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for Program Lang'
+define service YHSKA14_UIC_PROGM {
+  expose YHSKA14_C_PROG_M as ProgProcessor;
+}

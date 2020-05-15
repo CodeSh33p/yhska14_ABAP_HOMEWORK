@@ -1,0 +1,14 @@
+projection;
+
+define behavior for YHSKA14_C_PROG_M alias ProgProcessor
+use etag
+{
+  field ( mandatory ) ProgName, Favorite;
+
+  use create;
+  use update;
+  use delete;
+
+  use action downloadData;
+  use action favorise;
+}

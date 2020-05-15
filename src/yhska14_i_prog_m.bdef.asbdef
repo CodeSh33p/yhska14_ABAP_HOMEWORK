@@ -1,0 +1,21 @@
+managed implementation in class yhska14_bp_i_prog_m unique;
+
+define behavior for YHSKA14_I_PROG_M alias PROG
+persistent table yhska_14_prog
+lock master
+//authorization master ( instance )
+etag master last_changed_at
+{
+  field(readonly) last_changed_at, last_changed_by;
+  field ( mandatory ) name, favorite;
+
+  create;
+  update;
+  delete;
+
+  action ( features : instance ) downloadData result [1] $self;
+  action ( features : instance ) favorise result [1] $self;
+
+  validation validateFav on save { field favorite; }
+  validation validateStats on save {field shares, rating; }
+}
